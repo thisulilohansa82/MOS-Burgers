@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOS Burgers</title>
+    <title>MosBurger</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
+
 <body>
-        <h1>MOS Burgurs</h1><br><br>
-        <div class="main-container">
-            <div class="login">
-                <h3>Login</h3><br><br>
-                <div>
-                    email
-                </div>
-
+    <header>
+        <div id="stars"></div>
+        <div class="navbar">
+            <img src="img/logo.jpg" alt="">
+            <div class="center-nav">
+                <a href="">Home</a>
+                <a href="">Menu</a>
+                <a href="">About</a>
+                <a href="">Shop</a>
             </div>
-            <div class="logimage">
-                <img src="home-burger.png" alt="">
-
+            <div class="social">
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href=""><i class="fa-solid fa-house"></i></a>
             </div>
-
         </div>
-<script src="script.js"></script>
+
+        <div class="text">
+            <h2>Where Flavor Meets Freshness <br> The Ultimate Burger Experience!</h2>
+            <p>Welcome to MOS Burgers, where passion meets flavor in every bite! Our menu is crafted with the
+                freshest ingredients and a love for good food, offering a variety of mouthwatering burgers, sides, and
+                drinks that will satisfy every craving. Whether you're craving a classic cheeseburger or a unique,
+                gourmet creation, we’ve got something for everyone. At [Burger Shop Name], we focus on quality, taste,
+                and making every meal an unforgettable experience. Order online, or visit us in-store and enjoy a burger
+                made just for you!</p>
+            <a href="#" class="btn" onclick="openLoginModal()">Login</a>
+        </div>
+
+
+
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Enter Username" required>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p id="error-message"></p>
+            </div>
+        </div>
+
+
+
+        <div class="burger">
+            <img src="img/burger.png" alt="">
+            <img src="img/pngwing.com (12).png" alt="">
+            <img src="img/buger2.png" alt="">
+            <img src="img/Flying Burger PNG Image - 2084x2084.png" alt="">
+            <img src="img/pngwing.com (16).png" alt="">
+        </div>
+        <div class="burger-toggle">
+            <img src="img/Flying Burger PNG Image - 2084x2084.png" alt="">
+        </div>
+    </header>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

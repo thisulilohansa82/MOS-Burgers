@@ -1,33 +1,279 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+
+* {
+  text-decoration: none;
 }
 
-h1 {
-    font-size: 3 rem;
-    color: #ff6347;
-    text-align: center;
+body{
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+  background-color: black;
+  background-attachment: fixed;
 }
 
-.main-container{
-    display: flex;
-    align-items: center;
-    width: 40%;
-    max-width: 1200px;
-    margin: 20px;
-  }
-  .login{
-    flex: 1;
-    background-color: #faa47c;
-    border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0,0,0.1);
-    width: 5px;
-    height: 700px;
+header {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: black;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  animation: twinkle 2s infinite;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes twinkle{
+  0% {
+      opacity: 0.5;
   }
 
-  .logimage{
-    width: 5px;
-    border-radius: 20px;
+  50% {
+      opacity: 1;
   }
+
+  100%{
+      opacity: 0.5;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: slideInFromTop 1s ease-in-out;
+}
+
+.navbar img{
+  width: 50px;
+  animation: rotateIn 1s ease-in-out;
+}
+
+.navbar .center-nav a,
+.social a{
+  color: white;
+  margin-left: 15px;
+  font-size: 1.3rem;
+  transition:all 0.5s ease;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.navbar .center-nav a:first-child {
+  color: rgb(255, 140, 0);
+}
+
+.navbar .center-nav a:hover,
+.social a:hover {
+  color: rgb(255,140,0);
+  text-shadow: 0px 0px 30px rgb(255, 140 ,0);
+}
+
+.navbar .center-nav a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 140 ,0);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .center-nav a:hover::before {
+  visibility: visible;
+  transform: scale(1);
+}
+
+.text {
+  position: relative;
+  top: 10rem;
+  left: 11rem;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.text h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.btn{
+  color: white;
+  border: 2px solid;
+  position: relative;
+  top: 3rem;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 6px;
+  transition: all 0.5s ease;
+  margin-right: 10px;
+  animation: fadeInUp 1s ease-in-out 0.5s backwards;
+}
+
+.text .btn:hover {
+  background-color: rgb(255, 140 ,0);
+  box-shadow: 0 0 10px 2px rgb(255, 140, 0);
+}
+
+.text p{
+  width: 46%;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.burger {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  width: 90%;
+  padding: 20px;
+  animation: slideInFromBotton 1s ease-in-out 1.5s backwards;
+}
+
+.burger img{
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  object-fit: cover;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 1s ease-in-out 2s backwards;
+}
+
+.burgerimg:hover {
+  transform: scale(1.1);
+}
+
+.burger-toggle img{
+  position: absolute;
+  width: 38%;
+  height: 74%;
+  right: 47px;
+  top: 7rem;
+  animation: fadeInUp 1s ease-in-out 2.5s backwards;
+}
+
+.burger,
+.burger-toggle{
+  display: flex;
+}
+
+
+
+.burger-toggle img.active{
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+
+  to{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes rotateIn{
+  from{
+      transform: rotate3d(0, 0, 1, -200deg);
+      opacity: 0;
+  }
+
+  to{
+      transform: none;
+      opacity: 1;
+  }
+}
